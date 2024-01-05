@@ -10,12 +10,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "30rem",
+        sm: "40rem",
+        md: "48rem",
+        lg: "64rem",
+        xl: "80rem",
+      },
       fontFamily: {
         sans: ["var(--font-nunito-sans)", "sans-serif"],
       },
       boxShadow: {
-        card: "0px 0px 7px 2px rgba(0, 0, 0, 0.03)",
-        searchbar: "0px 2px 9px 0px rgba(0, 0, 0, 0.05)",
+        card: "0rem 0rem 0.4375rem 0.125rem rgba(0, 0, 0, 0.03)",
+        searchbar: "0rem 0.125rem 0.5625rem 0rem rgba(0, 0, 0, 0.05)",
       },
       backgroundColor: {
         dark: "#202C36",

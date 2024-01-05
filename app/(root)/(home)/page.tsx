@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
 
   return (
     <Container as="main">
-      <div className="mt-12 flex justify-between gap-4">
+      <div className="mt-12 flex flex-wrap justify-between gap-4">
         <SearchBar />
         <Filters />
       </div>
@@ -50,14 +50,8 @@ export default async function Home({ searchParams }: SearchParamsProps) {
             />
           ))
         ) : (
-          <div className="flex w-full items-center justify-center">
-            <Image
-              src="/images/no-results.png"
-              alt="No results found"
-              width={500}
-              height={500}
-            />
-            <p className="text-2xl font-bold text-gray-500">No results found</p>
+          <div className="col-span-full flex w-full items-center justify-center py-4 ">
+            <p className="text-2xl font-bold">No results found</p>
           </div>
         )}
       </div>

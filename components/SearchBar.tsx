@@ -16,6 +16,7 @@ const SearchBar = () => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (search) {
+        console.log("search is not empty");
         const newUrl = formUrlQuery({
           params: searchParams.toString(),
           key: "query",
@@ -24,14 +25,12 @@ const SearchBar = () => {
 
         router.push(newUrl, { scroll: false });
       } else {
-        if (query) {
-          const newUrl = removeKeysFromQuery({
-            params: searchParams.toString(),
-            keysToRemove: ["global", "type"],
-          });
+        const newUrl = removeKeysFromQuery({
+          params: searchParams.toString(),
+          keysToRemove: ["query"],
+        });
 
-          router.push(newUrl, { scroll: false });
-        }
+        router.push(newUrl, { scroll: false });
       }
     }, 300);
 
@@ -39,7 +38,7 @@ const SearchBar = () => {
   }, [search, router, pathname, searchParams, query]);
 
   return (
-    <div className="interactive relative w-full max-w-[30rem]">
+    <div className="interactive relative w-full sm:max-w-[30rem]">
       <input
         type="text"
         className="text-content w-full rounded-lg bg-transparent py-[1.125rem] pl-[4.625rem] pr-3 shadow-lg"
