@@ -38,7 +38,7 @@ export default async function Home({ params, searchParams }: any) {
     <Container as="main">
       <BackButton />
 
-      <div className="flex flex-col gap-16 md:flex-row md:items-center md:justify-between">
+      <div className="mb-20 flex flex-col gap-16 md:flex-row md:items-center md:justify-between">
         <div className="w-full md:w-1/2">
           <Image
             src={results.flags.png}
@@ -59,7 +59,7 @@ export default async function Home({ params, searchParams }: any) {
               </p>
               <p>
                 <span className="font-semibold">Population:</span>{" "}
-                {results.population}
+                {results.population.toLocaleString()}
               </p>
               <p>
                 <span className="font-semibold">Region:</span> {results.region}
@@ -98,7 +98,7 @@ export default async function Home({ params, searchParams }: any) {
                   <Link
                     href={`/details/${border}/`}
                     key={border}
-                    className="shadow-btn rounded-md border border-gray-300 px-4 py-2"
+                    className="interactive shadow-btn rounded-md px-4 py-2"
                   >
                     {border}
                   </Link>

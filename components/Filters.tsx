@@ -22,9 +22,9 @@ const Filters = () => {
   };
 
   return (
-    <div className="select flex w-full items-center justify-center">
+    <div className="">
       <select
-        className='text-content shadow-searchbar" w-full rounded-md px-[1.5rem] py-[1.125rem]'
+        className="interactive dark: text-content w-full max-w-[12.5rem] cursor-pointer rounded-md px-[1.5rem] py-[1.125rem] shadow-searchbar"
         value={paramFilter || ""}
         onChange={(e) => handleUpdateParams(e.target.value)}
       >

@@ -39,15 +39,15 @@ const SearchBar = () => {
   }, [search, router, pathname, searchParams, query]);
 
   return (
-    <div className="relative flex w-full max-w-[30rem] items-center justify-center">
+    <div className="interactive relative w-full max-w-[30rem]">
       <input
         type="text"
-        className="text-content w-full rounded-md bg-transparent py-[1.125rem] pl-[4.625rem] pr-3 shadow-lg"
+        className="text-content w-full rounded-lg bg-transparent py-[1.125rem] pl-[4.625rem] pr-3 shadow-lg"
         placeholder="Search for a country..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <SearchIcon className="text-content absolute left-[1.5625rem] top-[1.5625rem] ml-4" />
+      <SearchIcon className="text-content absolute left-6 top-1/2 -translate-y-1/2 transform" />
     </div>
   );
 };

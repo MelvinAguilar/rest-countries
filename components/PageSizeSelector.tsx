@@ -27,10 +27,10 @@ const PageSizeSelector = ({ total }: PaginationProps) => {
   };
 
   return (
-    <div className="my-4 flex items-center justify-center">
+    <div className="my-8 flex items-center justify-center">
       <p className="text-content">Results per page: </p>
       <select
-        className="text-content mx-4 max-w-[25rem] rounded-md px-3 py-2 shadow-lg"
+        className="interactive text-content mx-4 max-w-[25rem] rounded-md px-3 py-2 shadow-lg"
         value={paramPageSize || ""}
         onChange={(e) => handleUpdateParams(e.target.value)}
       >

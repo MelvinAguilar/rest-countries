@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nunito.variable}>
+      <body
+        className={`${nunito.variable} bg-light dark:bg-dark text-dark dark:text-white`}
+      >
         <ThemeProvider>
           <Header />
           {children}

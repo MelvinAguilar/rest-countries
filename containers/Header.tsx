@@ -5,8 +5,8 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Header = () => {
   return (
-    <header className="py-6 shadow-lg">
-      <Container className="flex justify-between">
+    <header className="dark:bg-dark-secondary shadow-lg">
+      <Container className="flex items-center justify-between py-[1.1875rem]">
         <Link href="/" className="title">
           <h1>Where in the world?</h1>
         </Link>

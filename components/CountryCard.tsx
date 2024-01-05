@@ -18,7 +18,7 @@ const CountryCard = ({
   capital,
 }: CountryCardProps) => {
   return (
-    <div className="relative rounded-md shadow-lg">
+    <div className="interactive relative rounded-md shadow-lg">
       <Image
         src={flag}
         alt={`Flag of ${name}`}
@@ -29,7 +29,8 @@ const CountryCard = ({
       <div className="flex flex-col gap-2 p-6">
         <h2 className="country-title mb-2">{name}</h2>
         <p>
-          <span className="font-semibold">Population:</span> {population}
+          <span className="font-semibold">Population:</span>{" "}
+          {population.toLocaleString()}
         </p>
         <p>
           <span className="font-semibold">Region:</span> {region}

@@ -30,4 +30,8 @@ body {
     font-weight: 800;
     line-height: normal;
   }
+
+  .interactive {
+    @apply dark:bg-dark-secondary border border-gray-300 bg-white transition-all hover:bg-gray-200/10 dark:border-gray-700 dark:hover:bg-gray-700;
+  }
 }

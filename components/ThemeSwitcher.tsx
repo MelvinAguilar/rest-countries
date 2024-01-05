@@ -2,18 +2,25 @@
 
 import React from "react";
 import { useTheme } from "@/context/ThemeProvider";
-import { MoonIcon } from "./Icons";
+import { MoonLightModeIcon, MoonDarkModeIcon } from "./Icons";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
-  const keyProps = theme === "dark" ? { fill: "#fff" } : {};
 
   return (
     <button
-      className="flex items-center gap-2"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="interactive flex items-center gap-2 px-4 py-2 shadow-lg"
+      onClick={() => {
+        setTheme(theme === "dark" ? "light" : "dark");
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem(
+            "theme",
+            theme === "dark" ? "light" : "dark",
+          );
+        }
+      }}
     >
-      <MoonIcon width={16} height={16} {...keyProps} />
+      {theme === "dark" ? <MoonLightModeIcon /> : <MoonDarkModeIcon />}
       <span>Dark Mode</span>
     </button>
   );
