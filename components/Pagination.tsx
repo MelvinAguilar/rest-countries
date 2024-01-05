@@ -53,20 +53,20 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
       pageNumbers.push(
         <button
           key={1}
-          className="border border-gray-300 py-2  px-3 text-content  shadow-searchbar transition-all hover:bg-gray-200"
+          className="text-content border border-gray-300  px-3 py-2  shadow-searchbar transition-all hover:bg-gray-200"
           onClick={() => handleUpdateParams("1")}
         >
           1
-        </button>
+        </button>,
       );
       if (startPage > 2) {
         pageNumbers.push(
           <span
             key="ellipsis-start"
-            className="border border-gray-300 py-2  px-3 text-content"
+            className="text-content border border-gray-300  px-3 py-2"
           >
             ...
-          </span>
+          </span>,
         );
       }
     }
@@ -77,14 +77,14 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
         <button
           key={i}
           onClick={() => handleUpdateParams(i.toString())}
-          className={`border border-gray-300 py-2  px-3 text-content  shadow-searchbar transition-all hover:bg-gray-200 ${
+          className={`text-content border border-gray-300  px-3 py-2  shadow-searchbar transition-all hover:bg-gray-200 ${
             isCurrent
               ? "bg-gray-200 font-bold"
               : "transition-all hover:bg-gray-200"
           }`}
         >
           {i}
-        </button>
+        </button>,
       );
     }
 
@@ -93,20 +93,20 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
         pageNumbers.push(
           <span
             key="ellipsis-end"
-            className="border border-gray-300 py-2  px-3 text-content "
+            className="text-content border border-gray-300  px-3 py-2 "
           >
             ...
-          </span>
+          </span>,
         );
       }
       pageNumbers.push(
         <button
           key={totalPages}
-          className="border border-gray-300 py-2  px-3 text-content  shadow-searchbar transition-all hover:bg-gray-200"
+          className="text-content border border-gray-300  px-3 py-2  shadow-searchbar transition-all hover:bg-gray-200"
           onClick={() => handleUpdateParams(totalPages.toString())}
         >
           {totalPages}
-        </button>
+        </button>,
       );
     }
 
@@ -116,7 +116,7 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
   return (
     <div className="flex justify-center">
       <button
-        className="border border-gray-300 py-2  px-3 text-content  shadow-searchbar transition-all hover:bg-gray-200 rounded-l-md"
+        className="text-content rounded-l-md border  border-gray-300 px-3  py-2 shadow-searchbar transition-all hover:bg-gray-200"
         onClick={() => handleUpdateParams((currentPage - 1).toString())}
         disabled={isFirstPage}
       >
@@ -126,7 +126,7 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
       {renderPageNumbers()}
 
       <button
-        className="border border-gray-300 py-2  px-3 text-content  shadow-searchbar transition-all hover:bg-gray-200 rounded-r-md "
+        className="text-content rounded-r-md border  border-gray-300 px-3  py-2 shadow-searchbar transition-all hover:bg-gray-200 "
         onClick={() => handleUpdateParams((currentPage + 1).toString())}
         disabled={isLastPage}
       >
