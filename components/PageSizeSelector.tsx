@@ -27,7 +27,7 @@ const PageSizeSelector = ({ total }: PaginationProps) => {
   };
 
   return (
-    <div className="my-8 flex items-center justify-center">
+    <div className="my-8 flex items-center justify-center gap-2 flex-wrap">
       <p className="text-content">Results per page: </p>
       <select
         className="interactive text-content mx-4 max-w-[25rem] rounded-md px-3 py-2 shadow-lg"

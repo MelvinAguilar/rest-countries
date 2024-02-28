@@ -24,18 +24,18 @@ const CountryCard = ({
         alt={`Flag of ${name}`}
         width={264}
         height={500}
-        className="aspect-video w-full"
+        className="aspect-[18/11] w-full"
       />
       <div className="flex flex-col gap-2 p-6">
         <h2 className="country-title mb-2">{name}</h2>
-        <p>
+        <p className="details leading-[1rem]" >
           <span className="font-semibold">Population:</span>{" "}
           {population.toLocaleString()}
         </p>
-        <p>
+        <p className="details">
           <span className="font-semibold">Region:</span> {region}
         </p>
-        <p>
+        <p className="details">
           <span className="font-semibold">Capital:</span> {capital}
         </p>
       </div>

@@ -10,6 +10,10 @@ export async function getCountryList(params: GetCountryParams) {
     connectToDatabase();
 
     const { page = 1, pageSize = 10, searchQuery, filter, sort } = params;
+    
+    if (page < 1) {
+      throw new Error("Invalid page number");
+    }
 
     const skip = (page - 1) * pageSize;
     const limit = pageSize;

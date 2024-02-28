@@ -1,25 +1,14 @@
-import CountryCard from "@/components/CountryCard";
+import CountryContainer from "@/components/CountryContainer";
 import Filters from "@/components/Filters";
 import PageSizeSelector from "@/components/PageSizeSelector";
 import Pagination from "@/components/Pagination";
 import SearchBar from "@/components/SearchBar";
 import { Container } from "@/containers/Container";
 import { getCountryList } from "@/lib/actions/country.action";
-import Image from "next/image";
 
 interface SearchParamsProps {
   searchParams: { [key: string]: string | undefined };
 }
-
-type CountryCardProps = {
-  name: string;
-  flags: {
-    png: string;
-  };
-  population: number;
-  region: string;
-  capital: string;
-};
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const results = await getCountryList({
@@ -28,6 +17,11 @@ export default async function Home({ searchParams }: SearchParamsProps) {
     page: searchParams.page ? parseInt(searchParams.page) : 1,
     sort: searchParams.sort,
     pageSize: searchParams.pageSize ? parseInt(searchParams.pageSize) : 10,
+  }).catch((err) => {
+    return {
+      countries: [],
+      total: 0,
+    };
   });
 
   return (
@@ -37,24 +31,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
         <Filters />
       </div>
 
-      <div className="grid grid-cols-1 gap-8 py-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {results.countries.length > 0 ? (
-          results.countries.map((country: CountryCardProps) => (
-            <CountryCard
-              key={country.name}
-              name={country.name}
-              flag={country.flags.png}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-            />
-          ))
-        ) : (
-          <div className="col-span-full flex w-full items-center justify-center py-4 ">
-            <p className="text-2xl font-bold">No results found</p>
-          </div>
-        )}
-      </div>
+      <CountryContainer results={JSON.parse(JSON.stringify(results))} />
 
       <Pagination
         total={results.total}

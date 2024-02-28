@@ -63,7 +63,8 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
         pageNumbers.push(
           <span
             key="ellipsis-start"
-            className="text-content border-r px-3 py-2 dark:border-gray-700"
+            aria-hidden="true"
+            className="text-content cursor-not-allowed  px-3 py-2 ring-1 ring-gray-300 dark:ring-gray-700"
           >
             ...
           </span>,
@@ -77,9 +78,8 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
         <button
           key={i}
           onClick={() => handleUpdateParams(i.toString())}
-          className={`text-content interactive border-l-0 px-3 py-2 shadow-searchbar ${
-            isCurrent ? "bg-gray-200 font-bold underline dark:bg-gray-900" : ""
-          }`}
+          className={`text-content interactive border-l-0 px-3 py-2 shadow-searchbar ${isCurrent ? "bg-gray-200 font-bold underline dark:bg-gray-900" : ""
+            }`}
         >
           {i}
         </button>,
@@ -91,7 +91,8 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
         pageNumbers.push(
           <span
             key="ellipsis-end"
-            className="text-content cursor-default border-r px-3 py-2 dark:border-gray-700"
+            aria-hidden="true"
+            className="text-content cursor-not-allowed px-3 py-2 ring-1 ring-gray-300 dark:ring-gray-700"
           >
             ...
           </span>,
@@ -112,11 +113,10 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center flex-wrap gap-y-2 gap-x-[.0625rem]">
       <button
-        className={`text-content interactive rounded-l-md px-3 py-2 shadow-searchbar ${
-          isFirstPage ? "!dark:bg-gray-800 cursor-not-allowed" : ""
-        }`}
+        className={`text-content interactive rounded-l-md px-3 py-2 shadow-searchbar ${isFirstPage ? "!dark:bg-gray-800 cursor-not-allowed" : ""
+          }`}
         onClick={() => handleUpdateParams((currentPage - 1).toString())}
         disabled={isFirstPage}
       >
@@ -126,9 +126,8 @@ const Pagination = ({ total, limit, currentPage }: PaginationProps) => {
       {renderPageNumbers()}
 
       <button
-        className={`text-content interactive rounded-r-md border-l-0 px-3  py-2 shadow-searchbar ${
-          isLastPage ? "!dark:bg-gray-800 cursor-not-allowed" : ""
-        }`}
+        className={`text-content interactive rounded-r-md border-l-0 px-3  py-2 shadow-searchbar ${isLastPage ? "!dark:bg-gray-800 cursor-not-allowed" : ""
+          }`}
         onClick={() => handleUpdateParams((currentPage + 1).toString())}
         disabled={isLastPage}
       >

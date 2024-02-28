@@ -39,6 +39,23 @@ export const ArrowLeftIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const ArrowMenu = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M9.45 3.45L6 6.9L2.55 3.45L1.5 4.5L6 9L10.5 4.5L9.45 3.45Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 export const MoonDarkModeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="20"
@@ -67,6 +84,7 @@ export const MoonLightModeIcon = (props: React.SVGProps<SVGSVGElement>) => (
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
     {...props}
   >
     <path

@@ -9,7 +9,7 @@ const ThemeSwitcher = () => {
 
   return (
     <button
-      className="interactive flex items-center gap-2 px-4 py-2 shadow-lg"
+      className="flex gap-2 items-center py-2 transition-all hover:font-semibold"
       onClick={() => {
         setTheme(theme === "dark" ? "light" : "dark");
         if (typeof window !== "undefined") {

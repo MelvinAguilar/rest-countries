@@ -5,7 +5,7 @@ export const filters = [
   },
   {
     id: 2,
-    name: "Americas",
+    name: "America",
   },
   {
     id: 3,
@@ -21,4 +21,4 @@ export const filters = [
   },
 ];
 
-export const resultsPerPage = [12, 24, 36, 48];
+export const resultsPerPage = [8, 12, 24, 36, 48];
