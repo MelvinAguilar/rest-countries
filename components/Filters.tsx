@@ -60,27 +60,26 @@ const Filters = () => {
       {isMenuOpen && (
         <div
           className="interactive-no-hover absolute right-0 mt-2 w-full origin-top-right rounded-md"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="options-menu"
           onBlur={closeMenu}
         >
-          <ul className="z-10 py-[0.813rem]">
-            {/* <li>
+          <ul
+            className="z-10 py-[0.813rem]"
+            role="menu"
+            aria-labelledby="options-menu"
+          >
+            {/* <li role="menuitem">
               <button
                 onClick={() => removeFilter()}
                 className="w-full px-6 py-[0.219rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
-                role="menuitem"
               >
                 Remove Filter
               </button>
             </li> */}
             {filters.map((filter) => (
-              <li key={filter.id}>
+              <li key={filter.id} role="menuitem">
                 <button
                   onClick={() => handleUpdateParams(filter.name)}
                   className="w-full px-6 py-[0.219rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
-                  role="menuitem"
                 >
                   {filter.name}
                 </button>

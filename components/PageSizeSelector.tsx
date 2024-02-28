@@ -33,6 +33,7 @@ const PageSizeSelector = ({ total }: PaginationProps) => {
         className="interactive text-content mx-4 max-w-[25rem] rounded-md px-3 py-2 shadow-lg"
         value={paramPageSize || ""}
         onChange={(e) => handleUpdateParams(e.target.value)}
+        aria-label="Results per page"
       >
         <option value="">Results per page</option>
         {resultsPerPage.map((pageSize) => (
