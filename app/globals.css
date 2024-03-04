@@ -8,7 +8,7 @@ body {
 
 @layer components {
   .country-title {
-    font-size: 1.125rem;
+    font-size: 1.063rem; 
     font-weight: 800;
     line-height: 1.625rem; /* 144.444% */
   }
