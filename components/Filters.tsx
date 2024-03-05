@@ -14,7 +14,7 @@ const Filters = () => {
   const paramFilter = searchParams.get("filter");
 
   const menubarRef = useRef<HTMLDivElement>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleUpdateParams = (value: string) => {
     const newURL = formUrlQuery({

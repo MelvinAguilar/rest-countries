@@ -45,6 +45,13 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 <br>
 
+<h2 align="center">Links</h2>
+
+- Solution URL: [REST Countries API (Next.js & Server Actions + TypeScript + Tailwind) | Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-nextjs-and-server-actions-typescript-tailwind-n98Q5eaqNz)
+- Live Site URL: [https://rest-countries-hdez.vercel.app/](https://rest-countries-hdez.vercel.app/)
+
+<br>
+
 ## Table of contents
 
 - [Overview](#overview)

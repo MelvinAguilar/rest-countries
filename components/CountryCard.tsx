@@ -26,7 +26,7 @@ const CountryCard = ({
         height={500}
         className="aspect-[18/11] w-full"
       />
-      <div className="flex flex-col gap-2 p-6 pb-[2.875rem]">
+      <div className="flex flex-col gap-2 p-6 pb-8">
         <h2 className="country-title mb-2">{name}</h2>
         <p className="details leading-[1rem]" >
           <span className="font-semibold">Population:</span>{" "}
