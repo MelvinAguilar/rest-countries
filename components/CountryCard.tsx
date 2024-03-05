@@ -18,7 +18,7 @@ const CountryCard = ({
   capital,
 }: CountryCardProps) => {
   return (
-    <div className="interactive relative rounded-md shadow-lg">
+    <div className="interactive relative rounded-md shadow-lg h-full">
       <Image
         src={flag}
         alt={`Flag of ${name}`}
@@ -36,7 +36,7 @@ const CountryCard = ({
           <span className="font-semibold">Region:</span> {region}
         </p>
         <p className="details">
-          <span className="font-semibold">Capital:</span> {capital}
+          <span className="font-semibold">Capital:</span> {capital || "N/A"}
         </p>
       </div>
       <Link

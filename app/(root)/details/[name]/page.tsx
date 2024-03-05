@@ -38,18 +38,21 @@ export default async function Home({ params, searchParams }: any) {
     <Container as="main">
       <BackButton />
 
-      <div className="mb-20 flex flex-col gap-16 md:flex-row md:items-center md:justify-between">
+      <h1 className="sr-only">{results.name} Details</h1>
+
+      <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="w-full md:w-1/2">
           <Image
             src={results.flags.png}
             alt={`Flag of ${results.name}`}
             width={700}
             height={500}
+            className="w-full"
           />
         </div>
 
         <div className="flex w-full flex-col gap-8 md:w-1/2">
-          <h1 className="country-title">{results.name}</h1>
+          <h2 className="country-title">{results.name}</h2>
 
           <div className="flex flex-col flex-wrap gap-8 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-2">
@@ -70,22 +73,28 @@ export default async function Home({ params, searchParams }: any) {
               </p>
               <p>
                 <span className="font-semibold">Capital:</span>{" "}
-                {results.capital}
+                {results.capital || "No Capital"}
               </p>
             </div>
 
             <div className="flex flex-col gap-2">
               <p>
                 <span className="font-semibold">Currencies:</span>{" "}
-                {Object.values(results.currencies)
-                  .map((currency: any) => currency.name)
-                  .join(", ")}
+                {results.currencies &&
+                Object.values(results.currencies).length > 0
+                  ? Object.values(results.currencies)
+                      .map((currency: any) => currency.name)
+                      .join(", ")
+                  : "No Currency"}
               </p>
               <p className="flex max-w-[18.75rem] flex-wrap gap-1">
                 <span className="font-semibold">Languages:</span>
-                {Object.values(results.languages)
-                  .map((language: any) => language.name)
-                  .join(", ")}
+                {results.languages &&
+                Object.values(results.languages).length > 0
+                  ? Object.values(results.languages)
+                      .map((language: any) => language.name)
+                      .join(", ")
+                  : "No Language"}
               </p>
             </div>
           </div>
@@ -104,7 +113,7 @@ export default async function Home({ params, searchParams }: any) {
                   </Link>
                 ))
               ) : (
-                <span>None</span>
+                <span>No Borders</span>
               )}
             </div>
           </div>

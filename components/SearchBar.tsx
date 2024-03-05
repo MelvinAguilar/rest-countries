@@ -44,6 +44,7 @@ const SearchBar = () => {
         placeholder="Search for a country..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        aria-label="Search for a country"
       />
       <SearchIcon className="text-content absolute left-[1.9375rem] top-[49%] -translate-y-1/2 transform" />
     </div>

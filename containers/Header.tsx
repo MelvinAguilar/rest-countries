@@ -8,7 +8,7 @@ const Header = () => {
     <header className="dark:bg-dark-secondary shadow-lg">
       <Container className="flex items-center justify-between py-[1.1875rem]">
         <Link href="/" className="title">
-          <h1>Where in the world?</h1>
+          <h2>Where in the world?</h2>
         </Link>
         <ThemeSwitcher />
       </Container>

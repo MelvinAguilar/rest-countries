@@ -67,19 +67,19 @@ const Filters = () => {
             role="menu"
             aria-labelledby="options-menu"
           >
-            {/* <li role="menuitem">
+            <li role="menuitem">
               <button
                 onClick={() => removeFilter()}
-                className="w-full px-6 py-[0.219rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="w-full px-6 py-[0.65rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 Remove Filter
               </button>
-            </li> */}
+            </li>
             {filters.map((filter) => (
               <li key={filter.id} role="menuitem">
                 <button
                   onClick={() => handleUpdateParams(filter.name)}
-                  className="w-full px-6 py-[0.219rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="w-full px-6 py-[0.5rem] text-left hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {filter.name}
                 </button>

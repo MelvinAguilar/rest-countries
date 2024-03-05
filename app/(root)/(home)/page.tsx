@@ -26,6 +26,8 @@ export default async function Home({ searchParams }: SearchParamsProps) {
 
   return (
     <Container as="main">
+      <h1 className="sr-only">Countries List</h1>
+      
       <div className="mt-12 flex flex-wrap justify-between gap-4">
         <SearchBar />
         <Filters />

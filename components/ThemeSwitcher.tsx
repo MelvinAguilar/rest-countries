@@ -9,7 +9,7 @@ const ThemeSwitcher = () => {
 
   return (
     <button
-      className="flex gap-2 items-center py-2 transition-all hover:font-semibold"
+      className="flex items-center gap-2 py-2 transition-all hover:font-semibold"
       onClick={() => {
         setTheme(theme === "dark" ? "light" : "dark");
         if (typeof window !== "undefined") {
@@ -19,9 +19,11 @@ const ThemeSwitcher = () => {
           );
         }
       }}
+      aria-pressed={theme === "dark"}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? <MoonLightModeIcon /> : <MoonDarkModeIcon />}
-      <span>Dark Mode</span>
+      <span aria-hidden>Dark Mode</span>
     </button>
   );
 };

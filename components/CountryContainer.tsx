@@ -40,7 +40,7 @@ const CountryContainer = ({ results }: CountryContainerProps) => {
   return (
     <div
       id="results"
-      className="grid grid-rows-[min-content] gap-8 py-[3rem] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-[4.625rem]"
+      className="grid grid-rows-[min-content] gap-8 py-[3rem] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
       <AnimatePresence mode="popLayout">
         {results.countries.length > 0 ? (
